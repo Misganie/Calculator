@@ -35,3 +35,51 @@ function operate(operator, num1, num2) {
     }
   }
   
+
+
+let firstNum = null;
+let secondNum = null;
+let operator = null;
+let shouldResetDisplay = false;
+
+function appendToDisplay(value) {
+  const display = document.getElementById('display');
+  if (display.value === "0" || shouldResetDisplay) {
+      display.value = value;
+      shouldResetDisplay = false;
+  } else {
+      display.value += value;
+  }
+}
+
+function setOperator(op) {
+  if (firstNum === null) {
+      firstNum = parseFloat(document.getElementById('display').value);
+      operator = op;
+      shouldResetDisplay = true;
+  } else if (operator) {
+      // If operator already set, just update it
+      operator = op;
+  } else {
+      // If no second number yet, ignore
+  }
+}
+
+function calculateResult() {
+  if (firstNum !== null && operator) {
+      secondNum = parseFloat(document.getElementById('display').value);
+      const result = operate(operator, firstNum, secondNum);
+      document.getElementById('display').value = result;
+      firstNum = result;  // Use the result for the next operation
+      operator = null;    // Reset operator
+      secondNum = null;   // Reset second number
+      shouldResetDisplay = true;
+  }
+}
+
+function clearDisplay() {
+  document.getElementById('display').value = "0";
+  firstNum = null;
+  secondNum = null;
+  operator = null;
+}
