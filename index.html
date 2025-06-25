@@ -1,47 +1,39 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project: Calculator</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Basic Calculator</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Project: Calculator</h1>
-
-
-    
-    <div id="calculator">
-
-        <!-- Display -->
-        <input type="text" id="display" disabled value="0">
-
-        <!-- Creating buttons for each digit and operator -->
-        <div id="partOne">
-            <button onclick="clearDisplay()">C</button>
-            <button onclick="appendToDisplay('1')">1</button>
-            <button onclick="appendToDisplay('2')">2</button>
-            <button onclick="appendToDisplay('3')">3</button>
-            <button onclick="setOperator('+')">+</button>
+    <div class="calculator">
+        <div class="display">
+            <div id="display-content">0</div>
+            <div id="error-message"></div>
         </div>
-        <div id="partTwo">
-            <button onclick="appendToDisplay('4')">4</button>
-            <button onclick="appendToDisplay('5')">5</button>
-            <button onclick="appendToDisplay('6')">6</button>
-            <button onclick="setOperator('-')">-</button>
-        </div>
-        <div id="partThree">
-            <button onclick="appendToDisplay('7')">7</button>
-            <button onclick="appendToDisplay('8')">8</button>
-            <button onclick="appendToDisplay('9')">9</button>
-            <button onclick="setOperator('*')">*</button>
-        </div>
-        <div id="partFour">
-            <button onclick="appendToDisplay('0')">0</button>
-            <button onclick="calculateResult()">=</button>
-            <button onclick="setOperator('/')">/</button>
+        <div class="buttons">
+            <button class="btn clear" id="clear">AC</button>
+            <button class="btn backspace" id="backspace">⌫</button>
+            <button class="btn operator" id="divide">÷</button>
+            <button class="btn number" id="seven">7</button>
+            <button class="btn number" id="eight">8</button>
+            <button class="btn number" id="nine">9</button>
+            <button class="btn operator" id="multiply">×</button>
+            <button class="btn number" id="four">4</button>
+            <button class="btn number" id="five">5</button>
+            <button class="btn number" id="six">6</button>
+            <button class="btn operator" id="subtract">-</button>
+            <button class="btn number" id="one">1</button>
+            <button class="btn number" id="two">2</button>
+            <button class="btn number" id="three">3</button>
+            <button class="btn operator" id="add">+</button>
+            <button class="btn number zero" id="zero">0</button>
+            <button class="btn decimal" id="decimal">.</button>
+            <button class="btn equals" id="equals">=</button>
         </div>
     </div>
-    <script src="script.js" defer></script>
+    <script src="script.js"></script>
 </body>
 </html>
